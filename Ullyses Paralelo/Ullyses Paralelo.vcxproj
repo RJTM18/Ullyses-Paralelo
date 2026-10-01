@@ -111,6 +111,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +141,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="jugador.cpp" />
+    <ClCompile Include="Level1State.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,7 +153,9 @@
     <ClInclude Include="..\IGameState.h" />
     <ClInclude Include="..\OmniCameraStrategy.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Level1State.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Fondo de ciudad Nivel 1.txt" />

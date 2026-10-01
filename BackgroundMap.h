@@ -1,10 +1,11 @@
+#pragma once
 #include <vector>
 #include <string>
 #include <fstream> //para leer .txt
 
 class BackgroundMap {
 private:
-    std::vector grid;
+    std::vector<std::string> grid;
     int width, height;
 public:
     bool loadFromFile(const std::string& filepath) {

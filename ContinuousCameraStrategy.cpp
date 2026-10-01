@@ -1,11 +1,7 @@
 #include "ContinuousCameraStrategy.h"
 
 //declaracion de variables internas
-ContinuousCameraStrategy::ContinuousCameraStrategy(int anchoP, int anchoM) 
-    : 
-    centroPantalla(anchoP / 2),
-    anchoPantalla(anchoP),
-    anchoMundo(anchoM) { }
+ContinuousCameraStrategy::ContinuousCameraStrategy(int anchoP, int anchoM) : centroPantalla(anchoP / 2), anchoPantalla(anchoP), anchoMundo(anchoM) { }
 
 void ContinuousCameraStrategy::updateCamera(int playerX, int playerY, int& camX, int& camY) {
     // Si el jugador no ha cruzado el umbral, la cámara no se mueve (X = 0)

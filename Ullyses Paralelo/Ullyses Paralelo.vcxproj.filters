@@ -39,6 +39,12 @@
     <ClCompile Include="jugador.cpp">
       <Filter>Src\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1State.cpp">
+      <Filter>Src\Level</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ICameraBehavior.h">
@@ -61,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="Entidad.h">
       <Filter>Src\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1State.h">
+      <Filter>Src\Level</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
