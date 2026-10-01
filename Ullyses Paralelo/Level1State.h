@@ -1,6 +1,9 @@
 #pragma once
 #include "IGameState.h"
 #include "Jugador.h"
+#include "BackgroundMap.h"
+#include "ICameraBehavior.h"
+#include <memory>
 
 class Level1State : public IGameState {
 public:
@@ -15,4 +18,7 @@ private:
     float acumulador = 0.f;
     bool terminado = false;
     int camX = 0, camY = 0;
+    BackgroundMap fondo;
+    std::unique_ptr<ICameraBehavior> camara;
+
 };

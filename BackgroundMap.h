@@ -8,6 +8,9 @@ private:
     std::vector<std::string> grid;
     int width, height;
 public:
+    int getWidth() const { return width; }
+    int getHeight() const { return height; }
+
     bool loadFromFile(const std::string& filepath) {
         std::ifstream file(filepath);
         std::string line;
