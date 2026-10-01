@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{5ef332d1-bbb1-4da2-ac15-e0a62dccf420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Core">
+      <UniqueIdentifier>{30274f5f-bc09-4e0f-98b7-0079e828c823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Camera">
+      <UniqueIdentifier>{90efaa3a-8c71-4b04-b443-1ef2fa0a9739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Level">
+      <UniqueIdentifier>{373001ab-2adc-4c7e-9312-f2134c3e1614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{645bb13f-f8ed-45e6-a4f1-67b74d796957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\backgrounds">
+      <UniqueIdentifier>{a0b219e0-2e08-4372-b457-ed238951b04d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\configs">
+      <UniqueIdentifier>{cd193a8b-d34b-4859-90e8-904a517b496d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Entities">
+      <UniqueIdentifier>{51734e8c-e337-493c-b291-256b76d57db4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\World">
+      <UniqueIdentifier>{0158bbb0-adf9-46fd-b094-dcea6b065bde}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ContinuousCameraStrategy.cpp">
+      <Filter>Src\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="jugador.cpp">
+      <Filter>Src\Entities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ICameraBehavior.h">
+      <Filter>Src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ContinuousCameraStrategy.h">
+      <Filter>Src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\OmniCameraStrategy.h">
+      <Filter>Src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IGameState.h">
+      <Filter>Src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BackgroundMap.h">
+      <Filter>Src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Src\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entidad.h">
+      <Filter>Src\Entities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Fondo de ciudad Nivel 1.txt">
+      <Filter>Assets\backgrounds</Filter>
+    </Text>
+    <Text Include="..\level1_config.txt">
+      <Filter>Assets\configs</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
