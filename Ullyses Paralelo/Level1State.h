@@ -4,6 +4,8 @@
 #include "BackgroundMap.h"
 #include "ICameraBehavior.h"
 #include <memory>
+#include "VelocidadPorCarril.h"
+#include <vector>
 
 class Level1State : public IGameState {
 public:
@@ -20,5 +22,6 @@ private:
     int camX = 0, camY = 0;
     BackgroundMap fondo;
     std::unique_ptr<ICameraBehavior> camara;
+    std::vector<Carril> carriles;
 
 };

@@ -141,10 +141,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp" />
+    <ClCompile Include="carro.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="jugador.cpp" />
     <ClCompile Include="Level1State.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SpecialEnemy.cpp" />
+    <ClCompile Include="SpecialEnemy.h" />
+    <ClCompile Include="VelocidadPorCarril.cpp" />
+    <ClCompile Include="VelocidadPorCarril.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\BackgroundMap.h" />
@@ -152,6 +157,7 @@
     <ClInclude Include="..\ContinuousCameraStrategy.h" />
     <ClInclude Include="..\IGameState.h" />
     <ClInclude Include="..\OmniCameraStrategy.h" />
+    <ClInclude Include="carro.h" />
     <ClInclude Include="Entidad.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Jugador.h" />

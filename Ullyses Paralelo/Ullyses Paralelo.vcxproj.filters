@@ -28,6 +28,9 @@
     <Filter Include="Src\World">
       <UniqueIdentifier>{0158bbb0-adf9-46fd-b094-dcea6b065bde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Entidades propiedades">
+      <UniqueIdentifier>{a767a2ab-bbf9-4ea8-a25f-d69b711e1b80}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp">
@@ -44,6 +47,21 @@
     </ClCompile>
     <ClCompile Include="Level1State.cpp">
       <Filter>Src\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="carro.cpp">
+      <Filter>Src\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="VelocidadPorCarril.h">
+      <Filter>Src\Entidades propiedades</Filter>
+    </ClCompile>
+    <ClCompile Include="VelocidadPorCarril.cpp">
+      <Filter>Src\Entidades propiedades</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialEnemy.h">
+      <Filter>Src\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialEnemy.cpp">
+      <Filter>Src\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="Level1State.h">
       <Filter>Src\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="carro.h">
+      <Filter>Src\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

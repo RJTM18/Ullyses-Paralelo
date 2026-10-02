@@ -14,6 +14,12 @@ namespace {
     constexpr int PASO_X = 2;
     constexpr float INTERVALO_PASO = 0.08f;   // 80 ms
     constexpr int ANCHO_MUNDO = 709;  
+
+    constexpr int NUM_CARRILES = 4;
+    // ★ LA PALANCA (diseño): columnas/segundo por carril. [0] = el más cercano a la acera
+    constexpr float VELOCIDAD_CARRIL[NUM_CARRILES] = { 12.f, 18.f, 26.f, 34.f };
+    constexpr int GAP_MIN = 60;
+    constexpr int GAP_MAX = 80;
 }
 
 Level1State::Level1State() : jugador(5, FILA_CALLE) {}
@@ -28,12 +34,22 @@ void Level1State::init() {
         return;
     }
     camara = std::make_unique<ContinuousCameraStrategy>(ANCHO_PANTALLA, fondo.getWidth());
+
+    carriles.clear();
+    for (int i = 0; i < NUM_CARRILES; ++i) {
+        carriles.emplace_back(FILA_CALLE + i * ALTO_CARRIL, VELOCIDAD_CARRIL[i], GAP_MIN, GAP_MAX);
+        carriles.back().precalentar(40, ANCHO_PANTALLA);   // sin carros cerca del punto de salida (x=5)
+    }
 }
 
 
 void Level1State::update(float dt) {
+    dt = std::min(dt, 0.1f);                                   // NUEVO
     const EntradaJugador in = leerEntrada();
     if (in.salir) { terminado = true; return; }
+
+    for (auto& carril : carriles)                              // NUEVO
+        carril.actualizar(dt, camX, ANCHO_PANTALLA);
 
     acumulador += dt;
     if (acumulador < INTERVALO_PASO) return;
@@ -63,6 +79,9 @@ void Level1State::render() {
     for (int y = 0; y < ALTO_PANTALLA; ++y)
         for (int x = 0; x < ANCHO_PANTALLA; ++x)
             pantalla[y][x] = fondo.getPixel(camX + x, camY + y);
+
+    for (const auto& carril : carriles)
+        carril.dibujar(pantalla, camX, camY);
 
     jugador.dibujar(pantalla, camX, camY);
 
