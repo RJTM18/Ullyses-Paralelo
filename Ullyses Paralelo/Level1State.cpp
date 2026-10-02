@@ -6,6 +6,7 @@
 #include <iostream>
 #include <memory>
 
+//atributos de nivel, palancas
 namespace {
     constexpr int ANCHO_PANTALLA = 120;
     constexpr int ALTO_PANTALLA = 23; 
@@ -21,11 +22,14 @@ namespace {
     constexpr float VELOCIDAD_ESPECIAL = 20.f; //personas
     constexpr int GAP_MIN = 60;
     constexpr int GAP_MAX = 80;
+    constexpr int   VIDAS_INICIALES = 5;
+    constexpr float PAUSA_GOLPE_SEG = 0.5f;   // ★ palanca de diseño
 }
 
 Level1State::Level1State()
-    : jugador(5, FILA_CALLE),
-    especiales(VELOCIDAD_ESPECIAL, FILA_CALLE, NUM_CARRILES, ALTO_CARRIL) {
+    : jugador(5, FILA_CALLE, VIDAS_INICIALES),
+    especiales(VELOCIDAD_ESPECIAL, FILA_CALLE, NUM_CARRILES, ALTO_CARRIL),
+    pausaGolpe(PAUSA_GOLPE_SEG) {
 }
 
 void Level1State::init() {
@@ -48,16 +52,42 @@ void Level1State::init() {
     especiales.reiniciar();
 }
 
+bool Level1State::hayChoque() const {
+    for (const auto& carril : carriles)
+        for (const auto& carro : carril.getCarros())
+            if (carro.colisionaCon(jugador)) return true;
+    for (const auto& enemigo : especiales.getEnemigos())
+        if (enemigo.colisionaCon(jugador)) return true;
+    return false;
+}
 
 void Level1State::update(float dt) {
     dt = std::min(dt, 0.1f);                                   // NUEVO
     const EntradaJugador in = leerEntrada();
     if (in.salir) { terminado = true; return; }
 
+    if (enPausa) {
+        pausaRestante -= dt;
+        if (pausaRestante > 0.f) return;
+        for (auto& carril : carriles) carril.retirarChocados(jugador);
+        especiales.retirarChocados(jugador);
+        vaciarEntrada();
+        enPausa = false;
+        return;
+    }
+
     for (auto& carril : carriles)                              // NUEVO
         carril.actualizar(dt, camX, ANCHO_PANTALLA);
 
     especiales.actualizar(dt, camX, ANCHO_PANTALLA);
+
+    if (hayChoque()) {
+        jugador.perderVida();
+        enPausa = true;
+        pausaRestante = pausaGolpe;
+        if (!jugador.estaVivo()) { derrota = true; terminado = true; }
+        return;
+    }
 
     acumulador += dt;
     if (acumulador < INTERVALO_PASO) return;
@@ -97,7 +127,13 @@ void Level1State::render() {
 
     jugador.dibujar(pantalla, camX, camY);
 
-    std::string salida;
+    std::string salida = " VIDAS: ";
+    for (int i = 0; i < jugador.getVidas(); ++i) salida += "<3 ";
+    salida += "\n";
+    for (const auto& fila : pantalla) salida += "|" + fila + "|\n";
+    salida += enPausa ? " >>> AUCH! PERDISTE UNA VIDA! <<<\n"
+        : " ESQUIVA EL TRAFICO Y SIGUE CORRIENDO!\n";
+    
     for (const auto& fila : pantalla) salida += "|" + fila + "|\n";
     system("cls");
     std::cout << salida;
