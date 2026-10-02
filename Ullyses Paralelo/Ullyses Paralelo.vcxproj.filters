@@ -63,6 +63,9 @@
     <ClCompile Include="SpecialEnemy.cpp">
       <Filter>Src\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="GestorEspeciales.cpp">
+      <Filter>Src\Entidades propiedades</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ICameraBehavior.h">
@@ -94,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="carro.h">
       <Filter>Src\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorEspeciales.h">
+      <Filter>Src\Entidades propiedades</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

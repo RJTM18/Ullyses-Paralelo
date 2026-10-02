@@ -17,12 +17,16 @@ namespace {
 
     constexpr int NUM_CARRILES = 4;
     // ★ LA PALANCA (diseño): columnas/segundo por carril. [0] = el más cercano a la acera
-    constexpr float VELOCIDAD_CARRIL[NUM_CARRILES] = { 12.f, 18.f, 26.f, 34.f };
+    constexpr float VELOCIDAD_CARRIL[NUM_CARRILES] = { 12.f, 18.f, 26.f, 34.f }; //autos por carril
+    constexpr float VELOCIDAD_ESPECIAL = 20.f; //personas
     constexpr int GAP_MIN = 60;
     constexpr int GAP_MAX = 80;
 }
 
-Level1State::Level1State() : jugador(5, FILA_CALLE) {}
+Level1State::Level1State()
+    : jugador(5, FILA_CALLE),
+    especiales(VELOCIDAD_ESPECIAL, FILA_CALLE, NUM_CARRILES, ALTO_CARRIL) {
+}
 
 void Level1State::init() {
     terminado = false;
@@ -40,6 +44,8 @@ void Level1State::init() {
         carriles.emplace_back(FILA_CALLE + i * ALTO_CARRIL, VELOCIDAD_CARRIL[i], GAP_MIN, GAP_MAX);
         carriles.back().precalentar(40, ANCHO_PANTALLA);   // sin carros cerca del punto de salida (x=5)
     }
+
+    especiales.reiniciar();
 }
 
 
@@ -50,6 +56,8 @@ void Level1State::update(float dt) {
 
     for (auto& carril : carriles)                              // NUEVO
         carril.actualizar(dt, camX, ANCHO_PANTALLA);
+
+    especiales.actualizar(dt, camX, ANCHO_PANTALLA);
 
     acumulador += dt;
     if (acumulador < INTERVALO_PASO) return;
@@ -71,6 +79,8 @@ void Level1State::update(float dt) {
         camara->updateCamera(jugador.getX(), jugador.getY(), camX, camY);
         acumulador = 0.f;
     }
+
+
 }
 
 void Level1State::render() {
@@ -82,6 +92,8 @@ void Level1State::render() {
 
     for (const auto& carril : carriles)
         carril.dibujar(pantalla, camX, camY);
+
+    especiales.dibujar(pantalla, camX, camY);
 
     jugador.dibujar(pantalla, camX, camY);
 

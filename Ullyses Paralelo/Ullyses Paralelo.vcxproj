@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp" />
     <ClCompile Include="carro.cpp" />
+    <ClCompile Include="GestorEspeciales.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="jugador.cpp" />
     <ClCompile Include="Level1State.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="..\OmniCameraStrategy.h" />
     <ClInclude Include="carro.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="GestorEspeciales.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Level1State.h" />

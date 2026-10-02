@@ -1,10 +1,9 @@
-// Carro.h
 #pragma once
 #include "Entidad.h"
 
 class SpecialEnemy : public Entidad {
 public:
-    static constexpr int ANCHO_SPRITE = 10;
+    static constexpr int ANCHO_SPRITE = 5;
     static constexpr int ALTO_SPRITE = 3;
 
     SpecialEnemy(int x, int y) : Entidad(x, y), xExacta(static_cast<float>(x)) {}

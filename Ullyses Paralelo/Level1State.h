@@ -6,6 +6,7 @@
 #include <memory>
 #include "VelocidadPorCarril.h"
 #include <vector>
+#include "GestorEspeciales.h"
 
 class Level1State : public IGameState {
 public:
@@ -23,5 +24,5 @@ private:
     BackgroundMap fondo;
     std::unique_ptr<ICameraBehavior> camara;
     std::vector<Carril> carriles;
-
+    GestorEspeciales especiales;
 };
