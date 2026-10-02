@@ -17,6 +17,11 @@ public:
 
     const std::deque<Carro>& getCarros() const { return carros; }   // para colisiones, después
     //en una lista, agregar de manera rapida elementos al inicio y final
+
+    void retirarChocados(const Entidad& objetivo) {
+        std::erase_if(carros, [&](const Carro& c) { return c.colisionaCon(objetivo); });
+    }
+
 private:
     int sortearGap() const;
 

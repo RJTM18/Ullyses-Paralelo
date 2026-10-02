@@ -16,6 +16,10 @@ public:
 
     const std::vector<SpecialEnemy>& getEnemigos() const { return enemigos; }   // para colisiones
 
+    void retirarChocados(const Entidad& objetivo) {
+        std::erase_if(enemigos, [&](const SpecialEnemy& e) { return e.colisionaCon(objetivo); });
+    }
+
 private:
     float sortearEspera() const;
     int   sortearFila() const;

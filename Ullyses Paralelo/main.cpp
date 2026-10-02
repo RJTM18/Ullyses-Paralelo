@@ -1,6 +1,8 @@
 #include <chrono>
 #include <thread>
 #include "Level1State.h"
+#include <iostream>
+#include <conio.h>
 
 int main() {
     Level1State nivel;
@@ -8,6 +10,10 @@ int main() {
     auto anterior = std::chrono::steady_clock::now();
 
     while (!nivel.haTerminado()) {
+        if (nivel.haPerdido()) {
+            std::cout << "\n  GAME OVER - te quedaste sin vidas.\n  Presiona una tecla para salir...";
+            _getch();
+        }
         const auto ahora = std::chrono::steady_clock::now();
         const float dt = std::chrono::duration<float>(ahora - anterior).count();
         anterior = ahora;

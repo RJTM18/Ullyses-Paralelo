@@ -133,8 +133,7 @@ void Level1State::render() {
     for (const auto& fila : pantalla) salida += "|" + fila + "|\n";
     salida += enPausa ? " >>> AUCH! PERDISTE UNA VIDA! <<<\n"
         : " ESQUIVA EL TRAFICO Y SIGUE CORRIENDO!\n";
-    
-    for (const auto& fila : pantalla) salida += "|" + fila + "|\n";
+   
     system("cls");
     std::cout << salida;
 }

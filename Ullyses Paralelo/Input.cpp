@@ -26,3 +26,7 @@ EntradaJugador leerEntrada() {
     }
     return e;
 }
+
+void vaciarEntrada() {
+    while (_kbhit()) _getch();
+} //absorbe los inputs

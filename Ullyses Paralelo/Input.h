@@ -7,3 +7,5 @@ struct EntradaJugador {
         salir = false;
 };
 EntradaJugador leerEntrada();
+
+void vaciarEntrada();

@@ -11,6 +11,7 @@ public:
     void avanzar(float distancia);   // columnas hacia la IZQUIERDA (puede ser fraccionaria)
     void dibujar(std::vector<std::string>& pantalla, int camX, int camY) const override;
 
+Caja getHitbox() const override { return { posicionX, posicionY, ANCHO_SPRITE, ALTO_SPRITE }; }
 private:
     float xExacta;   // posición real; posicionX (int) es solo la versión redondeada
 };
