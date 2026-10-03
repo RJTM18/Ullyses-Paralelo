@@ -1,10 +1,11 @@
 #include <chrono>
 #include <thread>
-#include "Level1State.h"
+#include "Level2State.h"
 #include <iostream>
 #include <conio.h>
 
 int main() {
+    /*
     Level1State nivel;
     nivel.init();
     auto anterior = std::chrono::steady_clock::now();
@@ -22,4 +23,7 @@ int main() {
         nivel.render();
         std::this_thread::sleep_for(std::chrono::milliseconds(16));
     }
+    */
+    Level2State nivel;
+
 }

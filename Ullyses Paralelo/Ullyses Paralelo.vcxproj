@@ -146,6 +146,8 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="jugador.cpp" />
     <ClCompile Include="Level1State.cpp" />
+    <ClCompile Include="Level2State.cpp" />
+    <ClCompile Include="Level2State.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SpecialEnemy.cpp" />
     <ClCompile Include="SpecialEnemy.h" />
