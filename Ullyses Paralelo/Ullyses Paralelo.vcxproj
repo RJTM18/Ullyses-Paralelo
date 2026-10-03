@@ -166,6 +166,8 @@
     <ClInclude Include="Level1State.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="#1.txt" />
+    <Text Include="#2.txt" />
     <Text Include="..\Fondo de ciudad Nivel 1.txt" />
     <Text Include="..\level1_config.txt" />
   </ItemGroup>

@@ -31,6 +31,9 @@
     <Filter Include="Src\Entidades propiedades">
       <UniqueIdentifier>{a767a2ab-bbf9-4ea8-a25f-d69b711e1b80}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\backgrounds\Nivel 2 tramos">
+      <UniqueIdentifier>{faa9ad55-2df4-4d7a-a535-94d656798e57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp">
@@ -108,6 +111,12 @@
     </Text>
     <Text Include="..\level1_config.txt">
       <Filter>Assets\configs</Filter>
+    </Text>
+    <Text Include="#1.txt">
+      <Filter>Assets\backgrounds\Nivel 2 tramos</Filter>
+    </Text>
+    <Text Include="#2.txt">
+      <Filter>Assets\backgrounds\Nivel 2 tramos</Filter>
     </Text>
   </ItemGroup>
 </Project>
