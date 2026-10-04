@@ -26,4 +26,6 @@ int main() {
     */
     Level2State nivel;
 
+    nivel.init();
+
 }

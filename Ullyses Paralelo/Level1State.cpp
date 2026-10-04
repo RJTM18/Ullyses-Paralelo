@@ -66,6 +66,7 @@ void Level1State::update(float dt) {
     const EntradaJugador in = leerEntrada();
     if (in.salir) { terminado = true; return; }
 
+    //cuando hay colision, el juego se detiene por un instante
     if (enPausa) {
         pausaRestante -= dt;
         if (pausaRestante > 0.f) return;
@@ -76,10 +77,13 @@ void Level1State::update(float dt) {
         return;
     }
 
+    //logica de carriles
     for (auto& carril : carriles)                              // NUEVO
         carril.actualizar(dt, camX, ANCHO_PANTALLA);
 
     especiales.actualizar(dt, camX, ANCHO_PANTALLA);
+
+    //colisiones genera pausa
 
     if (hayChoque()) {
         jugador.perderVida();
@@ -92,6 +96,8 @@ void Level1State::update(float dt) {
     acumulador += dt;
     if (acumulador < INTERVALO_PASO) return;
 
+
+    //ritmo de mov del jugador
     int dx = 0, dy = 0;
     if (in.derecha && !in.izquierda)      dx = PASO_X;
     else if (in.izquierda && !in.derecha) dx = -PASO_X;

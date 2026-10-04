@@ -1,19 +1,31 @@
 #include "IGameState.h"
+#include "StaticCameraStrategy.h"
+#include "ICameraBehavior.h"
+// #include "BackgroundMap.h"
 #include "math.h"
 #include <vector>
+#include <fstream> 
+#include "Jugador.h"
+#include "Stephen.h"
+#include "Policia.h"
 
 class Level2State : public IGameState {
 public: 
 		Level2State();
 		void init() override;
-		void update(float deltaTime) override;   // deltaTime en segundos
+		void update(float deltaTime) override;
 		void render() override;
-		bool haTerminado() const { return terminado; }
-		bool  haPerdido() const { return derrota; }
-		void  setPausaGolpe(float segundos) { pausaGolpe = std::max(0.f, segundos); }   // ★ LA PALANCA
-		float getPausaGolpe() const { return pausaGolpe; }
+
+		void spawn();
 private:
-	bool terminado = false;
-	bool  derrota = false;
-	float pausaGolpe;
+	// BackgroundMap fondo;
+	bool NivelTerminado = false;
+	Jugador jugador;
+	Stephen stephen;
+	Policia policia;
+
+	//arreglar camara
+	StaticCameraStrategy* camara;
+	const int camX = 0, camY = 0;
+
 };

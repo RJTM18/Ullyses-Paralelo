@@ -34,6 +34,18 @@
     <Filter Include="Assets\backgrounds\Nivel 2 tramos">
       <UniqueIdentifier>{faa9ad55-2df4-4d7a-a535-94d656798e57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Level\Level 2">
+      <UniqueIdentifier>{b486f25d-2f64-4523-ada9-2945974a78a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Level\Level 1">
+      <UniqueIdentifier>{3edd9872-8a17-441d-bcd8-17b82c6c983b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Entities\Level 1 Entities">
+      <UniqueIdentifier>{05be69bd-4bc3-426d-acc6-144eeac07b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Entities\Level 2 Entities">
+      <UniqueIdentifier>{5bf7ce49-17ca-483e-80ad-d0dc8b04e742}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp">
@@ -42,17 +54,8 @@
     <ClCompile Include="main.cpp">
       <Filter>Src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="jugador.cpp">
-      <Filter>Src\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Level1State.cpp">
-      <Filter>Src\Level</Filter>
-    </ClCompile>
-    <ClCompile Include="carro.cpp">
-      <Filter>Src\Entities</Filter>
     </ClCompile>
     <ClCompile Include="VelocidadPorCarril.h">
       <Filter>Src\Entidades propiedades</Filter>
@@ -60,20 +63,38 @@
     <ClCompile Include="VelocidadPorCarril.cpp">
       <Filter>Src\Entidades propiedades</Filter>
     </ClCompile>
-    <ClCompile Include="SpecialEnemy.h">
-      <Filter>Src\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="SpecialEnemy.cpp">
-      <Filter>Src\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="GestorEspeciales.cpp">
       <Filter>Src\Entidades propiedades</Filter>
     </ClCompile>
-    <ClCompile Include="Level2State.h">
-      <Filter>Src\Level</Filter>
-    </ClCompile>
     <ClCompile Include="Level2State.cpp">
-      <Filter>Src\Level</Filter>
+      <Filter>Src\Level\Level 2</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2State.h">
+      <Filter>Src\Level\Level 2</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1State.cpp">
+      <Filter>Src\Level\Level 1</Filter>
+    </ClCompile>
+    <ClCompile Include="jugador.cpp">
+      <Filter>Src\Entities\Level 1 Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialEnemy.h">
+      <Filter>Src\Entities\Level 1 Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialEnemy.cpp">
+      <Filter>Src\Entities\Level 1 Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="carro.cpp">
+      <Filter>Src\Entities\Level 1 Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Policia.cpp">
+      <Filter>Src\Entities\Level 2 Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Stephen.cpp">
+      <Filter>Src\Entities\Level 2 Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticCameraStrategy.cpp">
+      <Filter>Src\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,7 +104,7 @@
     <ClInclude Include="..\ContinuousCameraStrategy.h">
       <Filter>Src\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="..\OmniCameraStrategy.h">
+    <ClInclude Include="..\StaticCameraStrategy.h">
       <Filter>Src\Camera</Filter>
     </ClInclude>
     <ClInclude Include="..\IGameState.h">
@@ -92,23 +113,29 @@
     <ClInclude Include="..\BackgroundMap.h">
       <Filter>Src\World</Filter>
     </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorEspeciales.h">
+      <Filter>Src\Entidades propiedades</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1State.h">
+      <Filter>Src\Level\Level 1</Filter>
+    </ClInclude>
     <ClInclude Include="Jugador.h">
-      <Filter>Src\Entities</Filter>
+      <Filter>Src\Entities\Level 1 Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="carro.h">
+      <Filter>Src\Entities\Level 1 Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Policia.h">
+      <Filter>Src\Entities\Level 2 Entities</Filter>
     </ClInclude>
     <ClInclude Include="Entidad.h">
       <Filter>Src\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Src\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Level1State.h">
-      <Filter>Src\Level</Filter>
-    </ClInclude>
-    <ClInclude Include="carro.h">
-      <Filter>Src\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="GestorEspeciales.h">
-      <Filter>Src\Entidades propiedades</Filter>
+    <ClInclude Include="Stephen.h">
+      <Filter>Src\Entities\Level 2 Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,10 +145,7 @@
     <Text Include="..\level1_config.txt">
       <Filter>Assets\configs</Filter>
     </Text>
-    <Text Include="#1.txt">
-      <Filter>Assets\backgrounds\Nivel 2 tramos</Filter>
-    </Text>
-    <Text Include="#2.txt">
+    <Text Include="camino.txt">
       <Filter>Assets\backgrounds\Nivel 2 tramos</Filter>
     </Text>
   </ItemGroup>

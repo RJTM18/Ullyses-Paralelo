@@ -4,14 +4,16 @@
 namespace {
     constexpr int TOTAL_FRAMES = 3;
 
-    // SPRITES[direccion][frame][fila]   direccion: 0 = derecha, 1 = izquierda
+    // SPRITES[sprite(direccion)][frames][numero de filas]   direccion: 0 = derecha, 1 = izquierda
     const char* const SPRITES[2][TOTAL_FRAMES][Jugador::ALTO_SPRITE] = {
-        { // derecha
-            { "  L", " (|)", " /  L"  },
+        //sprite (conjunto de frames)
+        { // derecha, cuando dir es cero
+            { "  L", " (|)", " /  L", }, //cada fila es un frame
             { "  L", " (|)", " / L"   },
             { "  L", " (|)", "  L \\" },
         },
-        { // izquierda
+        //sprite 2
+        { // izquierda, cuando dir es uno
             { "  L", " (|)", " J  \\" },
             { "  L", " (|)", " J /"   },
             { "  L", " (|)", "/  J"   },
@@ -25,10 +27,11 @@ void Jugador::mover(int dx, int dy) {
     if (dx > 0) mirandoDerecha = true;
     else if (dx < 0) mirandoDerecha = false;
     frameActual = (frameActual + 1) % TOTAL_FRAMES;
+    //cada ves que el jugador mueve una unidad, frameActual ira alternando entre 0, 1 y 2, coincidiendo con los frames totales por sprite
 }
 
 void Jugador::dibujar(std::vector<std::string>& pantalla, int camX, int camY) const {
-    const int dir = mirandoDerecha ? 0 : 1;
+    const int dir = mirandoDerecha ? 0 : 1; // 0=true, 1=false
     for (int fila = 0; fila < ALTO_SPRITE; ++fila) {
         const int py = posicionY + fila - camY;
         if (py < 0 || py >= (int)pantalla.size()) continue;
