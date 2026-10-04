@@ -43,5 +43,5 @@ void Policia::dibujar(std::vector<std::string>& pantalla, int camX, int camY) co
 };
 
 Caja Policia::getHitbox() const {
-
-};
+    return { posicionX + 1, posicionY, 3, ALTO_SPRITE };   // solo el torso, igual que Jugador
+}

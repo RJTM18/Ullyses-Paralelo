@@ -3,8 +3,8 @@
 
 class Stephen : public Entidad { //1
 public:
-	static constexpr int ANCHO_SPRITE = 5;
-	static constexpr int ALTO_SPRITE = 3;
+	static constexpr int ANCHO_SPRITE = 3;
+	static constexpr int ALTO_SPRITE = 5;
 
 	Stephen(int x, int y) : Entidad(x, y) {};
 

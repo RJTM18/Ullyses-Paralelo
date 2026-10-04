@@ -121,7 +121,6 @@ void Level1State::update(float dt) {
 
 void Level1State::render() {
     std::vector<std::string> pantalla(ALTO_PANTALLA, std::string(ANCHO_PANTALLA, ' '));
-    // aquí irá el fondo (paso 7)
     for (int y = 0; y < ALTO_PANTALLA; ++y)
         for (int x = 0; x < ANCHO_PANTALLA; ++x)
             pantalla[y][x] = fondo.getPixel(camX + x, camY + y);
