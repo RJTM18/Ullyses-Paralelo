@@ -20,15 +20,14 @@ namespace {
 void Policia::mover(int dx, int dy) {
     posicionX += dx;
     posicionY += dy;
-    if (dy > 0) mirandoAbajo = true; //si va abajo, y aumenta, 
-    //mientras el jugador avance arriba, el policia ira en el mov opuesto.
-    else if (dy < 0) mirandoAbajo = false; //porque mira hacia arriba
+    if (dx > 0) mirandoDerecha = true;   // los sprites son de perfil: solo el movimiento horizontal los gira
+    else if (dx < 0) mirandoDerecha = false;   // (si solo hay dy, conserva la ultima orientacion)
 
     frameActual = (frameActual + 1) % TOTAL_FRAMES; //solo valores de 0, 1 y 2
 }
 
 void Policia::dibujar(std::vector<std::string>& pantalla, int camX, int camY) const {
-    const int dir = mirandoAbajo ? 0 : 1; // 0=true, 1=false
+    const int dir = mirandoDerecha ? 0 : 1; // 0=derecha, 1=izquierda
     for (int fila = 0; fila < ALTO_SPRITE; ++fila) {
         const int py = posicionY + fila - camY;
         if (py < 0 || py >= (int)pantalla.size()) continue;
@@ -40,7 +39,7 @@ void Policia::dibujar(std::vector<std::string>& pantalla, int camX, int camY) co
                 pantalla[py][px] = linea[c];
         }
     }
-};
+}
 
 Caja Policia::getHitbox() const {
     return { posicionX + 1, posicionY, 3, ALTO_SPRITE };   // solo el torso, igual que Jugador

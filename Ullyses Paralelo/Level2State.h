@@ -9,14 +9,15 @@
 #include "StaticCameraStrategy.h"
 
 class Level2State : public IGameState {
-public: 
+public:
 	Level2State();
 	void init() override;
 	void update(float deltaTime) override;
 	void render() override;
 
 	bool haTerminado() const override { return nivelTerminado; }
-	void spawn();
+	bool haGanado() const { return victoria; }   
+	bool haPerdido() const { return derrota; }    
 
 private:
 	BackgroundMap fondo;
@@ -29,6 +30,8 @@ private:
 
 	//arreglar camara
 	bool nivelTerminado = false;
+	bool victoria = false;
+	bool derrota = false;
 	float acumulador = 0.f;
 
 };

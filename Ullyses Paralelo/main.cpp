@@ -1,6 +1,7 @@
 #include <chrono>
 #include <thread>
 #include "Level2State.h"
+#include "Input.h"
 // #include "Level1State.h"
 #include <iostream>
 #include <conio.h>
@@ -8,7 +9,6 @@
 
 
 namespace {
-    // Corre CUALQUIER nivel: solo conoce la interfaz IGameState.
     void correr(IGameState& nivel) {
         nivel.init();
         auto anterior = std::chrono::steady_clock::now();
@@ -30,6 +30,11 @@ int main() {
 
     Level2State nivel;
     correr(nivel);
+
+    // Sin esto la ventana se cierra en cuanto termina el nivel y no se alcanza a leer el resultado
+    std::cout << "\n Presiona una tecla para salir...";
+    vaciarEntrada();   // por si el jugador seguia pulsando flechas
+    _getch();
 
     // Para probar el nivel 1 con el MISMO bucle:
     //   Level1State nivel1;

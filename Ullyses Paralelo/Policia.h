@@ -3,8 +3,8 @@
 
 class Policia : public Entidad { //muchos
 public:
-	static constexpr int ANCHO_SPRITE = 3;
-	static constexpr int ALTO_SPRITE = 5;
+	static constexpr int ANCHO_SPRITE = 5;   
+	static constexpr int ALTO_SPRITE = 3;    
 
 	Policia(int x, int y) : Entidad(x, y) {};
 
@@ -15,7 +15,7 @@ public:
 
 
 private:
-	bool mirandoAbajo = true;
+	bool mirandoDerecha = true;   
 	int frameActual = 0;
 
 };

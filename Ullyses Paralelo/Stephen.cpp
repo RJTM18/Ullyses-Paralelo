@@ -17,17 +17,19 @@ namespace {
     };
 }
 
-void Stephen::mover(int dx, int dy) { 
+void Stephen::mover(int dx, int dy) {
     posicionX += dx;
     posicionY += dy;
-    if (dy < 0) mirandoArriba = true; //si va arriba, y se reduce
-    else if (dy > 0) mirandoArriba = false;
+    if (dx > 0) mirandoDerecha = true;
+    else if (dx < 0) mirandoDerecha = false;
+
+    frameActual = (frameActual + 1) % TOTAL_FRAMES;
 }
 
 void Stephen::dibujar(std::vector<std::string>& pantalla, int camX, int camY) const {
-    //nivel 2 camara estatica: camX, camY = 0        
-        
-    const int dir = mirandoArriba ? 0 : 1; // 0=true, 1=false
+    //camX, camY = 0        
+
+    const int dir = mirandoDerecha ? 0 : 1; // 0=derecha, 1=izquierda
     for (int fila = 0; fila < ALTO_SPRITE; ++fila) {
         const int py = posicionY + fila - camY;
         if (py < 0 || py >= (int)pantalla.size()) continue; //fila cuando esta fuera de rango es ignorado
@@ -39,7 +41,7 @@ void Stephen::dibujar(std::vector<std::string>& pantalla, int camX, int camY) co
                 pantalla[py][px] = linea[c]; //linea[c] es un solo caracter, impresion por caracter
         }
     }
-};
+}
 
 Caja Stephen::getHitbox() const {
     return { posicionX + 1, posicionY, 3, ALTO_SPRITE };   // solo el torso, igual que Jugador
