@@ -46,6 +46,12 @@
     <Filter Include="Src\Entities\Level 2 Entities">
       <UniqueIdentifier>{5bf7ce49-17ca-483e-80ad-d0dc8b04e742}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Entities\Level 3 Entities">
+      <UniqueIdentifier>{7f10e43b-526d-439c-b4a3-90084b144512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Level\Level 3">
+      <UniqueIdentifier>{ee049d1c-bd1b-489f-b495-4dd78775d2b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp">
@@ -96,6 +102,9 @@
     <ClCompile Include="Level2State.h">
       <Filter>Src\Level\Level 2</Filter>
     </ClCompile>
+    <ClCompile Include="Level3State.h">
+      <Filter>Src\Level\Level 3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ICameraBehavior.h">
@@ -136,6 +145,24 @@
     </ClInclude>
     <ClInclude Include="Stephen.h">
       <Filter>Src\Entities\Level 2 Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Molly.h">
+      <Filter>Src\Level\Level 3</Filter>
+    </ClInclude>
+    <ClInclude Include="Personaje.h">
+      <Filter>Src\Level\Level 3</Filter>
+    </ClInclude>
+    <ClInclude Include="Palabra.h">
+      <Filter>Src\Level\Level 3</Filter>
+    </ClInclude>
+    <ClInclude Include="Pensamiento.h">
+      <Filter>Src\Level\Level 3</Filter>
+    </ClInclude>
+    <ClInclude Include="Consola.h">
+      <Filter>Src\Level\Level 3</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemigo.h">
+      <Filter>Src\Level\Level 3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

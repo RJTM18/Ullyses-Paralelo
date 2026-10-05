@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp" />
     <ClCompile Include="carro.cpp" />
+    <ClCompile Include="Level3State.h" />
     <ClCompile Include="Policia.cpp" />
     <ClCompile Include="GestorEspeciales.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -164,7 +165,13 @@
     <ClInclude Include="..\IGameState.h" />
     <ClInclude Include="..\StaticCameraStrategy.h" />
     <ClInclude Include="carro.h" />
+    <ClInclude Include="Consola.h" />
+    <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="Molly.h" />
+    <ClInclude Include="Palabra.h" />
+    <ClInclude Include="Pensamiento.h" />
+    <ClInclude Include="Personaje.h" />
     <ClInclude Include="Policia.h" />
     <ClInclude Include="GestorEspeciales.h" />
     <ClInclude Include="Input.h" />
