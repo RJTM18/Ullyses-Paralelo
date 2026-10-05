@@ -14,29 +14,17 @@ public:
     }
     virtual ~Personaje() {}
     
-    int getX()
-    {
-        return x;
-    }
-    int getY()
-    {
-        return y;
-    }
-    int getVidas()
-    {
-        return vidas;
-    }
-    void perderVida()
-    {
-        if (vidas > 0) vidas--;
-    }
+    int getX() { return x; }
+    int getY() { return y; }
+    int getVidas() { return vidas; }
+    void perderVida() { if (vidas > 0) vidas--; }
     
-    virtual void mover(char tecla)
-    {
+    virtual void mover(char tecla) {
         if (tecla == 'A' && x > 3) x -= 2;
         if (tecla == 'D' && x < 72) x += 2;
         if (tecla == 'W' && y > 5) y--;
         if (tecla == 'S' && y < 19) y++;
     }
+
     virtual void dibujar() = 0;
 };

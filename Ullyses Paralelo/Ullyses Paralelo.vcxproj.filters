@@ -52,6 +52,9 @@
     <Filter Include="Src\Level\Level 3">
       <UniqueIdentifier>{ee049d1c-bd1b-489f-b495-4dd78775d2b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Textos">
+      <UniqueIdentifier>{05e5510c-cd91-434f-b4d0-236e8ccdef44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ContinuousCameraStrategy.cpp">
@@ -163,6 +166,12 @@
     </ClInclude>
     <ClInclude Include="Enemigo.h">
       <Filter>Src\Level\Level 3</Filter>
+    </ClInclude>
+    <ClInclude Include="Textos.h">
+      <Filter>Src\Textos</Filter>
+    </ClInclude>
+    <ClInclude Include="Narrativa.h">
+      <Filter>Src\Textos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

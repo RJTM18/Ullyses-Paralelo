@@ -7,4 +7,3 @@ inline void moverCursor(int x, int y) {
     posicion.Y = static_cast<SHORT>(y);
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), posicion);
 }
-#pragma once

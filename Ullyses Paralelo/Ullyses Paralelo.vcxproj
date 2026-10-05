@@ -169,6 +169,7 @@
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Entidad.h" />
     <ClInclude Include="Molly.h" />
+    <ClInclude Include="Narrativa.h" />
     <ClInclude Include="Palabra.h" />
     <ClInclude Include="Pensamiento.h" />
     <ClInclude Include="Personaje.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Level1State.h" />
     <ClInclude Include="Stephen.h" />
+    <ClInclude Include="Textos.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="camino.txt" />

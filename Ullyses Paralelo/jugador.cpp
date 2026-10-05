@@ -4,9 +4,7 @@
 namespace {
     constexpr int TOTAL_FRAMES = 3;
 
-    // SPRITES[sprite(direccion)][frames][numero de filas]   direccion: 0 = derecha, 1 = izquierda
     const char* const SPRITES[2][TOTAL_FRAMES][Jugador::ALTO_SPRITE] = {
-        //sprite (conjunto de frames)
         { // derecha, cuando dir es cero
             { "  L", " (|)", " /  L", }, //cada fila es un frame
             { "  L", " (|)", " / L"   },

@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <conio.h>
 #include "Molly.h"
@@ -5,7 +6,7 @@
 #include "Personaje.h"
 #include "Pensamiento.h"
 
-bool jugarNivel3()
+inline bool jugarNivel3()
 {
     Molly molly(37, 17); Pensamiento jefe(28, 4); vector<Palabra*> palabras;
     int contador = 0, espera = 0;
